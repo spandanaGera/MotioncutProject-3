@@ -1,0 +1,89 @@
+/* Add or modify styles as needed */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em;
+}
+
+p{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 300;
+}
+.product-card {
+    width: calc(30% - 2em);
+    margin: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 280.05px; /* Set a fixed height for consistency */
+    object-fit:fill; /* Maintain aspect ratio and cover the container */
+}
+
+.product-info {
+    padding: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cta-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Add more styles for responsive design */
+
+@media only screen and (max-width: 768px) {
+    .product-card {
+        width: 100%;
+    }
+}

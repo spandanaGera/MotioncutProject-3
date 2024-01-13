@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-payment.css">
+    <title>Payment Page</title>
+</head>
+<body>
+    <header>
+        <h1>Payment Details</h1>
+    </header>
+    <main>
+        <section class="payment-form">
+            <h2>Product Summary</h2>
+            <p>Product: <span id="productName"></span></p>
+            <p>Total Amount: $<span id="totalAmount"></span></p>
+
+            <!-- Add your payment form fields here (credit card details, etc.) -->
+            <form id="paymentForm">
+                <!-- Payment form fields go here -->
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your E-commerce Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fetch product details from localStorage
+        const productName = localStorage.getItem('productName');
+        const totalAmount = localStorage.getItem('totalAmount');
+
+        // Update HTML with product details
+        document.getElementById('productName').textContent = productName;
+        document.getElementById('totalAmount').textContent = totalAmount;
+
+        // Add your payment processing logic here
+        document.getElementById('paymentForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Add your payment processing logic (e.g., integrate with a payment gateway)
+            alert(`Payment successful for ${productName}. Thank you for your purchase!`);
+            // Redirect to a thank you page or back to the product page
+            window.location.href = 'thankyou.html';
+        });
+    </script>
+</body>
+</html>
